@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  @apply bg-black text-white box-border;
+}
+.board-container {
+  @apply m-auto flex min-h-screen w-full items-center overflow-x-auto overflow-y-hidden px-[40px];
+}
+
+.inner-board-container {
+  @apply m-auto flex gap-4;
+}
+
+.board-columns {
+  @apply flex gap-8;
+}
+
+.column {
+  @apply bg-columnBackgroundColor flex flex-col gap-4 w-[350px] h-[500px] max-h-[500px] rounded-md;
+}
+
+.columnTitleContainer {
+  @apply flex items-center justify-between bg-mainBackgroundColor text-lg h-[60px] cursor-grab rounded-md rounded-b-none p-3 font-bold border-columnBackgroundColor border-4;
+}
+
+.columnTitle {
+  @apply flex gap-2;
+}
+
+.columnTitleInput {
+  @apply bg-black focus:border-rose-500 border rounded outline-none px-2;
+}
+
+.columnTitleCount {
+  @apply bg-columnBackgroundColor text-sm flex justify-center items-center px-2 py-1;
+}
+
+.columnContentContainer {
+  @apply flex flex-col gap-4 p-4;
+}
+
+.columnFooterContainer {
+  @apply flex;
+}
+
+.column-btn {
+  @apply h-[60px] w-[350px] min-w-[350px] max-w-[350px] cursor-pointer rounded-lg bg-mainBackgroundColor border-2 border-columnBackgroundColor p-4 m-2 ring-rose-500 flex gap-2 hover:ring-2;
+}
+
+.taskCardContainer {
+  @apply bg-mainBackgroundColor p-2.5 h-[100px] min-h-[100px];
+  @apply items-center flex text-left rounded-xl cursor-grab;
+  @apply hover:ring-2 hover:ring-inset hover:ring-rose-500 relative;
+}
+
+.taskCardContent {
+  @apply my-auto h-[90%] w-full overflow-y-auto overflow-x-hidden;
+  @apply whitespace-pre-wrap;
+}
+
+.taskCardDeleteBtn {
+  @apply stroke-white absolute right-4 top-1/2 -translate-y-1/2;
+  @apply bg-columnBackgroundColor p-2 rounded opacity-60 hover:opacity-100;
+}
+
+.taskCardContentInput {
+  @apply h-[90%] w-full resize-none border-none rounded bg-transparent;
+  @apply text-white focus:outline-none;
+}
